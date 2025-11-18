@@ -14,8 +14,8 @@ while True:
                     print ('Nenhuma tarefa.')
                 else:
                     print ('Lista de tarefas:')
-                    for tarefas in Lista_de_tarefas:
-                        print (tarefas)
+                    for tarefa in Lista_de_tarefas:
+                        print (tarefa)
             else:
                 break
         else:
