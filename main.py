@@ -1,4 +1,4 @@
-tarefa=('')
+Lista_de_tarefas=[]
 while True:
     escolha=input('     Menu da Lista de tarefas\n\n1. Adicionar Tarefa\n2. Listar Tarefas\n3. Sair ')
     try:
@@ -8,12 +8,14 @@ while True:
     else:
         if int(escolha)>0 and int(escolha)<=3:
             if str(escolha)==('1'):
-                tarefa=('Lista de tarefas:')+tarefa+('\n')+str(input('Adicione a tarefa: '))
+                Lista_de_tarefas.append (input("Adicione a tarefa: "))
             elif str(escolha)==('2'):
-                if tarefa==(''):
+                if Lista_de_tarefas==[]:
                     print ('Nenhuma tarefa.')
                 else:
-                    print (tarefa)
+                    print ('Lista de tarefas:')
+                    for tarefas in Lista_de_tarefas:
+                        print (tarefas)
             else:
                 break
         else:
