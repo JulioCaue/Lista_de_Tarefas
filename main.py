@@ -15,9 +15,7 @@ while True:
     #principal logica do menu
     else:
         if int(escolha)>0 and int(escolha)<=4:
-            if str(escolha)==('1') and Lista_de_tarefas==[]:
-                Lista_de_tarefas.insert(1,input("Adicione a tarefa: "))
-            elif str(escolha)==('1') and Lista_de_tarefas!=[]:
+            if str(escolha)==('1'):
                 Lista_de_tarefas.append(input("Adicione a tarefa: "))
             elif str(escolha)==('2'):
                 if Lista_de_tarefas==[]:
@@ -25,9 +23,9 @@ while True:
                 else:
                     #logica do submenu da escolha 2
                     print ('Lista de tarefas:')
-                    for tarefa in enumerate(Lista_de_tarefas,1):
-                        print (tarefa)
-                        input('digite qualquer coisa para sair.')
+                    for indice, tarefa in enumerate(Lista_de_tarefas,1):
+                        print (f"{indice}. {tarefa}")
+                    input('digite qualquer coisa para sair. ')
 
             #logica da escolha 3
             elif str(escolha)=='3':
@@ -53,11 +51,17 @@ while True:
 
                     #Deleta o numero selecionado
                     if item_a_ser_deletado>len(Lista_de_tarefas):
+                        print ('tarefa não faz parte da lista ou lista está vazia.')
+                    elif Lista_de_tarefas==0:
                         print ('tarefa não faz parte da lista.')
                     else:
-                        Lista_de_tarefas.pop(item_a_ser_deletado-1)
-                        print ("Tarefa foi deletada.")
-                        break
+                        if Lista_de_tarefas!=[]:
+                            Lista_de_tarefas.pop(item_a_ser_deletado-1)
+                            print ("Tarefa foi deletada.")
+                            break
+                        else:
+                            print ('lista está vazia.')
+                            break
             #quebra menu da escolha 3
             else:
                 break
