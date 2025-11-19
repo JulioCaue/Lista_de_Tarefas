@@ -41,20 +41,13 @@ while True:
                         break
 
                     #Deleta o numero selecionado
-                    if item_a_ser_deletado>len(Lista_de_tarefas):
-                        print ('tarefa não faz parte da lista ou lista está vazia.')
-                    elif item_a_ser_deletado==0:
-                        print ('tarefa não faz parte da lista.')
-                    elif item_a_ser_deletado<0:
-                        print ('valor é menor que 0.')
+                    if 0<=item_a_ser_deletado<len(Lista_de_tarefas):
+                        Lista_de_tarefas.pop(item_a_ser_deletado-1)
+                        print ("Tarefa foi deletada.")
+                        break
                     else:
-                        if Lista_de_tarefas!=[]:
-                            Lista_de_tarefas.pop(item_a_ser_deletado-1)
-                            print ("Tarefa foi deletada.")
-                            break
-                        else:
-                            print ('lista está vazia.')
-                            break
+                        print('item é menor ou igual a zero, ou não faz parte da lista.')
+                        
             #quebra menu da escolha 3
             else:
                 break
