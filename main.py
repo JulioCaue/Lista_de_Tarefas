@@ -32,15 +32,6 @@ while True:
                 #cria o loop do submenu da escolha 3
                 while True:
                     item_a_ser_deletado= input('Escreva o numero da tarefa a deletar ou digite qualquer palavra para sair.')
-                    try:
-                        str(item_a_ser_deletado)
-                    except:
-                        print ('Um erro aconteceu.')
-                    else:
-                        if str(item_a_ser_deletado)==('sair'):
-                            break
-
-
 
                     #quebra se item_a_ser_deletado não pode virar int
                     try:
@@ -52,8 +43,10 @@ while True:
                     #Deleta o numero selecionado
                     if item_a_ser_deletado>len(Lista_de_tarefas):
                         print ('tarefa não faz parte da lista ou lista está vazia.')
-                    elif Lista_de_tarefas==0:
+                    elif item_a_ser_deletado==0:
                         print ('tarefa não faz parte da lista.')
+                    elif item_a_ser_deletado<0:
+                        print ('valor é menor que 0.')
                     else:
                         if Lista_de_tarefas!=[]:
                             Lista_de_tarefas.pop(item_a_ser_deletado-1)
